@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_content_blocks_table_blocks",
+  "info": {
+    "displayName": "Table Block",
+    "description": "Structured table with AI-friendly markup"
+  },
+  "options": {},
+  "attributes": {
+    "table_title": {
+      "type": "string"
+    },
+    "table_headers": {
+      "type": "json",
+      "required": true
+    },
+    "table_rows": {
+      "type": "json",
+      "required": true
+    },
+    "table_caption": {
+      "type": "text"
+    },
+    "table_summary": {
+      "type": "text"
+    },
+    "table_style": {
+      "type": "enumeration",
+      "enum": ["default", "striped", "bordered", "compact", "comparison"],
+      "default": "default"
+    },
+    "sortable": {
+      "type": "boolean",
+      "default": false
+    },
+    "responsive": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

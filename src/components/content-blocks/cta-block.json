@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_content_blocks_cta_blocks",
+  "info": {
+    "displayName": "CTA Block",
+    "description": "Call-to-action block with styling options"
+  },
+  "options": {},
+  "attributes": {
+    "cta_title": {
+      "type": "string",
+      "required": true
+    },
+    "cta_description": {
+      "type": "text"
+    },
+    "cta_button_text": {
+      "type": "string",
+      "required": true
+    },
+    "cta_button_url": {
+      "type": "string",
+      "required": true
+    },
+    "cta_style": {
+      "type": "enumeration",
+      "enum": ["primary", "secondary", "outline", "minimal"],
+      "default": "primary"
+    },
+    "background_color": {
+      "type": "string",
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    },
+    "full_width": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

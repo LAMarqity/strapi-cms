@@ -31,6 +31,18 @@
       "type": "richtext",
       "required": true
     },
+    "content_blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-blocks.text-block",
+        "content-blocks.table-block",
+        "content-blocks.image-block",
+        "content-blocks.code-block",
+        "content-blocks.quote-block",
+        "content-blocks.video-block",
+        "content-blocks.cta-block"
+      ]
+    },
     "featured_image": {
       "type": "media",
       "multiple": false,

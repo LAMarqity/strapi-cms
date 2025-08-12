@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_content_blocks_text_blocks",
+  "info": {
+    "displayName": "Text Block",
+    "description": "Rich text content block"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_blocks_quote_blocks",
+  "info": {
+    "displayName": "Quote Block",
+    "description": "Blockquote with attribution"
+  },
+  "options": {},
+  "attributes": {
+    "quote_text": {
+      "type": "text",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "author_title": {
+      "type": "string"
+    },
+    "author_company": {
+      "type": "string"
+    },
+    "source_url": {
+      "type": "string"
+    },
+    "quote_style": {
+      "type": "enumeration",
+      "enum": ["default", "highlighted", "testimonial", "pullquote"],
+      "default": "default"
+    }
+  }
+}

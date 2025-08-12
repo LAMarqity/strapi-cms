@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_content_blocks_video_blocks",
+  "info": {
+    "displayName": "Video Block",
+    "description": "Embedded video with metadata"
+  },
+  "options": {},
+  "attributes": {
+    "video_url": {
+      "type": "string",
+      "required": true
+    },
+    "video_title": {
+      "type": "string"
+    },
+    "video_description": {
+      "type": "text"
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "video_duration": {
+      "type": "string"
+    },
+    "auto_play": {
+      "type": "boolean",
+      "default": false
+    },
+    "controls": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
