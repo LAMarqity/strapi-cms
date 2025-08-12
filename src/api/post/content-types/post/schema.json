@@ -210,9 +210,6 @@
       "enum": ["summary", "summary_large_image"],
       "default": "summary_large_image"
     },
-    "published_at": {
-      "type": "datetime"
-    },
     "status": {
       "type": "enumeration",
       "enum": ["draft", "published", "archived"],
@@ -220,10 +217,6 @@
       "required": true
     },
     "featured": {
-      "type": "boolean",
-      "default": false
-    },
-    "published": {
       "type": "boolean",
       "default": false
     },
