@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_authority_author_expertise",
+  "info": {
+    "displayName": "Author Expertise",
+    "description": "Author credentials for E-A-T signals"
+  },
+  "options": {},
+  "attributes": {
+    "author_credentials": {
+      "type": "text"
+    },
+    "author_experience_years": {
+      "type": "integer",
+      "min": 0
+    },
+    "author_certifications": {
+      "type": "text"
+    },
+    "author_publications": {
+      "type": "text"
+    }
+  }
+}

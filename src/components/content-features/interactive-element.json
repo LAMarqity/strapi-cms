@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_content_features_interactive_elements",
+  "info": {
+    "displayName": "Interactive Element",
+    "description": "Interactive content components"
+  },
+  "options": {},
+  "attributes": {
+    "element_type": {
+      "type": "enumeration",
+      "enum": ["calculator", "quiz", "checklist", "tool"],
+      "default": "tool"
+    },
+    "element_description": {
+      "type": "text"
+    },
+    "element_data": {
+      "type": "json"
+    }
+  }
+}

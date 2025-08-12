@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_content_features_content_formats",
+  "info": {
+    "displayName": "Content Format",
+    "description": "Alternative content formats and media"
+  },
+  "options": {},
+  "attributes": {
+    "format_type": {
+      "type": "enumeration",
+      "enum": ["video", "podcast", "infographic", "pdf", "slides"],
+      "default": "pdf"
+    },
+    "format_url": {
+      "type": "string"
+    },
+    "format_description": {
+      "type": "text"
+    },
+    "format_duration": {
+      "type": "string"
+    }
+  }
+}

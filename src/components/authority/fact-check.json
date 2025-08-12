@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_authority_fact_checks",
+  "info": {
+    "displayName": "Fact Check",
+    "description": "Verifiable claims and evidence"
+  },
+  "options": {},
+  "attributes": {
+    "claim": {
+      "type": "text",
+      "required": true
+    },
+    "evidence": {
+      "type": "richtext"
+    },
+    "verification_source": {
+      "type": "string"
+    },
+    "verification_status": {
+      "type": "enumeration",
+      "enum": ["verified", "pending", "disputed"],
+      "default": "pending"
+    }
+  }
+}

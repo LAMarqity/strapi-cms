@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_structured_data_how_to_steps",
+  "info": {
+    "displayName": "How To Step",
+    "description": "Step-by-step instructions for HowTo schema"
+  },
+  "options": {},
+  "attributes": {
+    "step_name": {
+      "type": "string",
+      "required": true
+    },
+    "step_description": {
+      "type": "richtext",
+      "required": true
+    },
+    "step_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "step_duration": {
+      "type": "string",
+      "regex": "^\\d+\\s?(min|hour|sec|day)s?$"
+    }
+  }
+}

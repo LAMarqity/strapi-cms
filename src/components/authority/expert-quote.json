@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_authority_expert_quotes",
+  "info": {
+    "displayName": "Expert Quote",
+    "description": "Quotes from industry experts"
+  },
+  "options": {},
+  "attributes": {
+    "quote_text": {
+      "type": "text"
+    },
+    "expert_name": {
+      "type": "string"
+    },
+    "expert_title": {
+      "type": "string"
+    },
+    "expert_organization": {
+      "type": "string"
+    }
+  }
+}

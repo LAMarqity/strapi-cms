@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_ai_optimization_conversational_queries",
+  "info": {
+    "displayName": "Conversational Query",
+    "description": "Natural language queries for AI optimization"
+  },
+  "options": {},
+  "attributes": {
+    "query_text": {
+      "type": "string"
+    },
+    "query_intent": {
+      "type": "enumeration",
+      "enum": ["informational", "transactional", "navigational"],
+      "default": "informational"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_structured_data_data_tables",
+  "info": {
+    "displayName": "Data Table",
+    "description": "Structured tables for fact extraction"
+  },
+  "options": {},
+  "attributes": {
+    "table_title": {
+      "type": "string"
+    },
+    "table_data": {
+      "type": "json"
+    },
+    "table_caption": {
+      "type": "text"
+    },
+    "table_summary": {
+      "type": "text"
+    }
+  }
+}

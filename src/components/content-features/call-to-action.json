@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_content_features_call_to_actions",
+  "info": {
+    "displayName": "Call To Action",
+    "description": "Strategic CTAs with context"
+  },
+  "options": {},
+  "attributes": {
+    "cta_text": {
+      "type": "string",
+      "required": true
+    },
+    "cta_url": {
+      "type": "string",
+      "required": true
+    },
+    "cta_type": {
+      "type": "enumeration",
+      "enum": ["primary", "secondary", "download", "subscribe", "learn"],
+      "default": "primary"
+    },
+    "cta_context": {
+      "type": "text"
+    }
+  }
+}

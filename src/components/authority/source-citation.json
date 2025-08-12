@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_authority_sources_and_citations",
+  "info": {
+    "displayName": "Source Citation",
+    "description": "Sources for AI citability and authority"
+  },
+  "options": {},
+  "attributes": {
+    "source_title": {
+      "type": "string",
+      "required": true
+    },
+    "source_url": {
+      "type": "string",
+      "required": true
+    },
+    "source_author": {
+      "type": "string"
+    },
+    "source_date": {
+      "type": "date"
+    },
+    "source_credibility": {
+      "type": "enumeration",
+      "enum": ["high", "medium", "low"],
+      "default": "medium"
+    },
+    "source_type": {
+      "type": "enumeration",
+      "enum": ["academic", "news", "government", "industry", "expert"],
+      "default": "industry"
+    }
+  }
+}

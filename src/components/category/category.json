@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_category_categories",
+  "info": {
+    "displayName": "category",
+    "icon": "birthday-cake"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

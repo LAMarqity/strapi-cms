@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_structured_data_faq_sections",
+  "info": {
+    "displayName": "FAQ Section",
+    "description": "FAQ schema for AI responses and rich snippets"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "richtext",
+      "required": true
+    },
+    "answer_summary": {
+      "type": "text",
+      "maxLength": 300
+    }
+  }
+}

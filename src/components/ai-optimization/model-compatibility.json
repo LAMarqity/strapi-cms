@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_ai_optimization_model_compatibility",
+  "info": {
+    "displayName": "AI Model Compatibility",
+    "description": "Compatibility tracking for different AI models"
+  },
+  "options": {},
+  "attributes": {
+    "model_name": {
+      "type": "string"
+    },
+    "compatibility_score": {
+      "type": "integer",
+      "min": 1,
+      "max": 10,
+      "default": 5
+    },
+    "optimization_notes": {
+      "type": "text"
+    }
+  }
+}

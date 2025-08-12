@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_ai_optimization_speakable_content",
+  "info": {
+    "displayName": "Speakable Content",
+    "description": "Voice-optimized content sections"
+  },
+  "options": {},
+  "attributes": {
+    "speakable_text": {
+      "type": "text"
+    },
+    "speakable_context": {
+      "type": "text"
+    }
+  }
+}

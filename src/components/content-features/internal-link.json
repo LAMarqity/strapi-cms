@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_content_features_internal_links",
+  "info": {
+    "displayName": "Internal Link",
+    "description": "Strategic internal linking for content clusters"
+  },
+  "options": {},
+  "attributes": {
+    "link_text": {
+      "type": "string"
+    },
+    "link_url": {
+      "type": "string"
+    },
+    "link_context": {
+      "type": "text"
+    },
+    "link_type": {
+      "type": "enumeration",
+      "enum": ["supporting", "related", "deep-dive", "reference"],
+      "default": "related"
+    }
+  }
+}

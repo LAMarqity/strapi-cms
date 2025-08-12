@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_ai_optimization_same_as_profiles",
+  "info": {
+    "displayName": "Same As Profile",
+    "description": "Identity verification links for schema markup"
+  },
+  "options": {},
+  "attributes": {
+    "platform_name": {
+      "type": "string"
+    },
+    "profile_url": {
+      "type": "string"
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

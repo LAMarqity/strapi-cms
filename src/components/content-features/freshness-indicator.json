@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_content_features_freshness_indicators",
+  "info": {
+    "displayName": "Content Freshness Indicator",
+    "description": "Indicators for content update triggers and scheduling"
+  },
+  "options": {},
+  "attributes": {
+    "update_trigger": {
+      "type": "string"
+    },
+    "last_fact_check": {
+      "type": "date"
+    },
+    "next_review_date": {
+      "type": "date"
+    }
+  }
+}

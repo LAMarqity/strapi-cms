@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_geo_optimization_key_takeaways",
+  "info": {
+    "displayName": "Key Takeaway",
+    "description": "Structured key points for AI understanding"
+  },
+  "options": {},
+  "attributes": {
+    "takeaway_text": {
+      "type": "text",
+      "required": true
+    },
+    "takeaway_category": {
+      "type": "enumeration",
+      "enum": ["insight", "tip", "warning", "fact"],
+      "default": "insight"
+    }
+  }
+}

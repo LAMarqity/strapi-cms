@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_geo_optimization_entity_mentions",
+  "info": {
+    "displayName": "Entity Mention",
+    "description": "Structured entities for Knowledge Graph optimization"
+  },
+  "options": {},
+  "attributes": {
+    "entity_name": {
+      "type": "string",
+      "required": true
+    },
+    "entity_type": {
+      "type": "enumeration",
+      "enum": ["person", "organization", "product", "concept", "location"],
+      "default": "concept"
+    },
+    "entity_description": {
+      "type": "text"
+    },
+    "entity_url": {
+      "type": "string"
+    }
+  }
+}

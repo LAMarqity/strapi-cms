@@ -82,6 +82,7 @@ ssl
 nbproject
 public/uploads/*
 !public/uploads/.gitkeep
+.claude
 
 ############################
 # Node.js
@@ -112,3 +113,8 @@ license.txt
 exports
 .cache
 build
+
+############################
+# MCP and secrets
+############################
+.mcp.json
