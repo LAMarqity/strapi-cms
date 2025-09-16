@@ -4,11 +4,132 @@
   "info": {
     "singularName": "landing-page",
     "pluralName": "landing-pages",
-    "displayName": "Landing Page"
+    "displayName": "Landing Page",
+    "description": "Landing pages for webinars and marketing campaigns"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200,
+      "description": "Page title for SEO"
+    },
+    "metaDescription": {
+      "type": "text",
+      "required": false,
+      "maxLength": 160,
+      "description": "Meta description for SEO"
+    },
+    "metaKeywords": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200,
+      "description": "Comma-separated keywords for SEO"
+    },
+    "ogImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"],
+      "description": "Open Graph image for social sharing"
+    },
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing-page.hero",
+      "required": true
+    },
+    "webinarCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing-page.webinar-cta",
+      "required": false,
+      "description": "Primary CTA section with webinar registration"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.feature",
+      "max": 12,
+      "description": "Key features or benefits"
+    },
+    "featuresTitle": {
+      "type": "string",
+      "required": false,
+      "maxLength": 200,
+      "default": "Key Features"
+    },
+    "featuresSubtitle": {
+      "type": "text",
+      "required": false,
+      "maxLength": 500
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "landing-page.testimonial",
+      "max": 10,
+      "description": "Customer testimonials"
+    },
+    "testimonialsTitle": {
+      "type": "string",
+      "required": false,
+      "maxLength": 200,
+      "default": "What Our Customers Say"
+    },
+    "secondaryCta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "landing-page.webinar-cta",
+      "required": false,
+      "description": "Secondary CTA section (bottom of page)"
+    },
+    "footerText": {
+      "type": "richtext",
+      "required": false,
+      "description": "Footer content for the landing page"
+    },
+    "customCss": {
+      "type": "text",
+      "required": false,
+      "description": "Custom CSS for this specific landing page"
+    },
+    "customJs": {
+      "type": "text",
+      "required": false,
+      "description": "Custom JavaScript for tracking or functionality"
+    },
+    "trackingPixels": {
+      "type": "json",
+      "required": false,
+      "description": "Tracking pixels configuration (Google, Facebook, etc.)"
+    },
+    "conversionGoal": {
+      "type": "string",
+      "required": false,
+      "maxLength": 100,
+      "description": "Conversion goal identifier for analytics"
+    },
+    "abTestVariant": {
+      "type": "enumeration",
+      "enum": ["control", "variant-a", "variant-b", "variant-c"],
+      "default": "control",
+      "description": "A/B test variant identifier"
+    },
+    "publishedAt": {
+      "type": "datetime",
+      "configurable": false,
+      "writable": true,
+      "visible": false
+    }
+  }
 }

@@ -1,0 +1,67 @@
+{
+  "collectionName": "components_landing_page_form_fields",
+  "info": {
+    "displayName": "Form Field",
+    "description": "Dynamic form field configuration"
+  },
+  "options": {},
+  "attributes": {
+    "fieldName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "fieldLabel": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "fieldType": {
+      "type": "enumeration",
+      "enum": ["text", "email", "tel", "number", "textarea", "select", "checkbox", "radio", "date", "time"],
+      "default": "text",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string",
+      "required": false,
+      "maxLength": 150
+    },
+    "isRequired": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "validationPattern": {
+      "type": "string",
+      "required": false,
+      "description": "Regex pattern for validation"
+    },
+    "errorMessage": {
+      "type": "string",
+      "required": false,
+      "default": "This field is required",
+      "maxLength": 200
+    },
+    "options": {
+      "type": "json",
+      "required": false,
+      "description": "Options for select, radio, or checkbox fields"
+    },
+    "defaultValue": {
+      "type": "string",
+      "required": false
+    },
+    "loopsFieldMapping": {
+      "type": "string",
+      "required": false,
+      "description": "Maps to Loops.so field name (e.g., email, firstName, customField1)"
+    },
+    "fieldOrder": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    }
+  }
+}

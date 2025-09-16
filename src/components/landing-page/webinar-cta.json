@@ -1,0 +1,110 @@
+{
+  "collectionName": "components_landing_page_webinar_ctas",
+  "info": {
+    "displayName": "Webinar CTA",
+    "description": "Call-to-action section for webinar registration with Loops.so integration"
+  },
+  "options": {},
+  "attributes": {
+    "webinarId": {
+      "type": "string",
+      "required": true,
+      "private": false,
+      "configurable": false,
+      "description": "Hidden webinar ID for API calls"
+    },
+    "ctaType": {
+      "type": "enumeration",
+      "required": true,
+      "default": "webinar",
+      "enum": [
+        "webinar",
+        "download",
+        "signup",
+        "demo",
+        "contact"
+      ]
+    },
+    "webinarTitle": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "webinarDescription": {
+      "type": "text",
+      "maxLength": 1000,
+      "required": false
+    },
+    "webinarDate": {
+      "type": "datetime",
+      "required": false
+    },
+    "webinarDuration": {
+      "type": "string",
+      "default": "60 minutes",
+      "required": false
+    },
+    "speakerName": {
+      "type": "string",
+      "maxLength": 100,
+      "required": false
+    },
+    "speakerTitle": {
+      "type": "string",
+      "maxLength": 150,
+      "required": false
+    },
+    "speakerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "loopsApiEndpoint": {
+      "type": "string",
+      "default": "https://app.loops.so/api/v1/contacts/create",
+      "required": true
+    },
+    "loopsListId": {
+      "type": "string",
+      "required": false
+    },
+    "formFields": {
+      "type": "component",
+      "component": "landing-page.form-field",
+      "repeatable": true,
+      "required": true,
+      "min": 1
+    },
+    "submitButtonText": {
+      "type": "string",
+      "default": "Register for Webinar",
+      "maxLength": 50,
+      "required": true
+    },
+    "successMessage": {
+      "type": "text",
+      "default": "Thank you for registering! Check your email for confirmation.",
+      "maxLength": 500,
+      "required": true
+    },
+    "errorMessage": {
+      "type": "text",
+      "default": "Sorry, there was an error. Please try again.",
+      "maxLength": 500,
+      "required": true
+    },
+    "consentText": {
+      "type": "text",
+      "default": "I agree to receive marketing communications",
+      "maxLength": 300,
+      "required": false
+    },
+    "privacyPolicyLink": {
+      "type": "string",
+      "required": false
+    }
+  }
+}

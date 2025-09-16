@@ -409,6 +409,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
 export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
   collectionName: 'landing_pages';
   info: {
+    description: 'Landing pages for webinars and marketing campaigns';
     displayName: 'Landing Page';
     pluralName: 'landing-pages';
     singularName: 'landing-page';
@@ -417,19 +418,78 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    abTestVariant: Schema.Attribute.Enumeration<
+      ['control', 'variant-a', 'variant-b', 'variant-c']
+    > &
+      Schema.Attribute.DefaultTo<'control'>;
+    conversionGoal: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customCss: Schema.Attribute.Text;
+    customJs: Schema.Attribute.Text;
+    features: Schema.Attribute.Component<'landing-page.feature', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 12;
+        },
+        number
+      >;
+    featuresSubtitle: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    featuresTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }> &
+      Schema.Attribute.DefaultTo<'Key Features'>;
+    footerText: Schema.Attribute.RichText;
+    hero: Schema.Attribute.Component<'landing-page.hero', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::landing-page.landing-page'
     > &
       Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 160;
+      }>;
+    metaKeywords: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    ogImage: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
+    secondaryCta: Schema.Attribute.Component<'landing-page.webinar-cta', false>;
+    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Component<'landing-page.testimonial', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+        },
+        number
+      >;
+    testimonialsTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }> &
+      Schema.Attribute.DefaultTo<'What Our Customers Say'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    trackingPixels: Schema.Attribute.JSON;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webinarCta: Schema.Attribute.Component<'landing-page.webinar-cta', false>;
   };
 }
 

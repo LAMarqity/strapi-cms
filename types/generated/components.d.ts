@@ -427,6 +427,235 @@ export interface GeoOptimizationKeyTakeaway extends Struct.ComponentSchema {
   };
 }
 
+export interface LandingPageFeature extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_features';
+  info: {
+    description: 'Individual feature item';
+    displayName: 'Feature';
+  };
+  attributes: {
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+    icon: Schema.Attribute.Media<'images'>;
+    link: Schema.Attribute.String;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
+export interface LandingPageFormField extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_form_fields';
+  info: {
+    description: 'Dynamic form field configuration';
+    displayName: 'Form Field';
+  };
+  attributes: {
+    defaultValue: Schema.Attribute.String;
+    errorMessage: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }> &
+      Schema.Attribute.DefaultTo<'This field is required'>;
+    fieldLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    fieldName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    fieldOrder: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    fieldType: Schema.Attribute.Enumeration<
+      [
+        'text',
+        'email',
+        'tel',
+        'number',
+        'textarea',
+        'select',
+        'checkbox',
+        'radio',
+        'date',
+        'time',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'text'>;
+    isRequired: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    loopsFieldMapping: Schema.Attribute.String;
+    options: Schema.Attribute.JSON;
+    placeholder: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    validationPattern: Schema.Attribute.String;
+  };
+}
+
+export interface LandingPageHero extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_heroes';
+  info: {
+    description: 'Hero section for landing pages';
+    displayName: 'Hero Section';
+  };
+  attributes: {
+    backgroundColor: Schema.Attribute.String;
+    backgroundType: Schema.Attribute.Enumeration<
+      ['color', 'gradient', 'image', 'video']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'color'>;
+    headline: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    heroImage: Schema.Attribute.Media<'images' | 'videos'>;
+    primaryButtonLink: Schema.Attribute.String;
+    primaryButtonText: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    secondaryButtonLink: Schema.Attribute.String;
+    secondaryButtonText: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    subheadline: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }>;
+  };
+}
+
+export interface LandingPageTestimonial extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_testimonials';
+  info: {
+    description: 'Customer testimonial';
+    displayName: 'Testimonial';
+  };
+  attributes: {
+    authorCompany: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    authorImage: Schema.Attribute.Media<'images'>;
+    authorName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    authorTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    quote: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 1000;
+      }>;
+    rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
+  };
+}
+
+export interface LandingPageWebinarCta extends Struct.ComponentSchema {
+  collectionName: 'components_landing_page_webinar_ctas';
+  info: {
+    description: 'Call-to-action section for webinar registration with Loops.so integration';
+    displayName: 'Webinar CTA';
+  };
+  attributes: {
+    consentText: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 300;
+      }> &
+      Schema.Attribute.DefaultTo<'I agree to receive marketing communications'>;
+    ctaType: Schema.Attribute.Enumeration<
+      ['webinar', 'download', 'signup', 'demo', 'contact']
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'webinar'>;
+    errorMessage: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }> &
+      Schema.Attribute.DefaultTo<'Sorry, there was an error. Please try again.'>;
+    formFields: Schema.Attribute.Component<'landing-page.form-field', true> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
+    loopsApiEndpoint: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://app.loops.so/api/v1/contacts/create'>;
+    loopsListId: Schema.Attribute.String;
+    privacyPolicyLink: Schema.Attribute.String;
+    speakerImage: Schema.Attribute.Media<'images'>;
+    speakerName: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    speakerTitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    submitButtonText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }> &
+      Schema.Attribute.DefaultTo<'Register for Webinar'>;
+    successMessage: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 500;
+      }> &
+      Schema.Attribute.DefaultTo<'Thank you for registering! Check your email for confirmation.'>;
+    webinarDate: Schema.Attribute.DateTime;
+    webinarDescription: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 1000;
+      }>;
+    webinarDuration: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'60 minutes'>;
+    webinarId: Schema.Attribute.String & Schema.Attribute.Required;
+    webinarTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+  };
+}
+
 export interface StructuredDataDataTable extends Struct.ComponentSchema {
   collectionName: 'components_structured_data_data_tables';
   info: {
@@ -500,6 +729,11 @@ declare module '@strapi/strapi' {
       'content-features.internal-link': ContentFeaturesInternalLink;
       'geo-optimization.entity-mention': GeoOptimizationEntityMention;
       'geo-optimization.key-takeaway': GeoOptimizationKeyTakeaway;
+      'landing-page.feature': LandingPageFeature;
+      'landing-page.form-field': LandingPageFormField;
+      'landing-page.hero': LandingPageHero;
+      'landing-page.testimonial': LandingPageTestimonial;
+      'landing-page.webinar-cta': LandingPageWebinarCta;
       'structured-data.data-table': StructuredDataDataTable;
       'structured-data.faq-section': StructuredDataFaqSection;
       'structured-data.how-to-step': StructuredDataHowToStep;

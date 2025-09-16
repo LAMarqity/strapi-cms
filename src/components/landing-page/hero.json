@@ -1,0 +1,55 @@
+{
+  "collectionName": "components_landing_page_heroes",
+  "info": {
+    "displayName": "Hero Section",
+    "description": "Hero section for landing pages"
+  },
+  "options": {},
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "required": true,
+      "maxLength": 200
+    },
+    "subheadline": {
+      "type": "text",
+      "required": false,
+      "maxLength": 500
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images", "videos"]
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50
+    },
+    "primaryButtonLink": {
+      "type": "string",
+      "required": false
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "required": false,
+      "maxLength": 50
+    },
+    "secondaryButtonLink": {
+      "type": "string",
+      "required": false
+    },
+    "backgroundType": {
+      "type": "enumeration",
+      "enum": ["color", "gradient", "image", "video"],
+      "default": "color",
+      "required": true
+    },
+    "backgroundColor": {
+      "type": "string",
+      "required": false,
+      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    }
+  }
+}
