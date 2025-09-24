@@ -105,6 +105,10 @@
     "privacyPolicyLink": {
       "type": "string",
       "required": false
+    },
+    "registrationFormIframe": {
+      "type": "text",
+      "required": true
     }
   }
 }
