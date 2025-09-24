@@ -4,7 +4,7 @@
   "info": {
     "singularName": "landing-page",
     "pluralName": "landing-pages",
-    "displayName": "Landing Page",
+    "displayName": "Webinar",
     "description": "Landing pages for webinars and marketing campaigns"
   },
   "options": {
@@ -12,6 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "publishedAt": {
+      "type": "datetime",
+      "configurable": false,
+      "writable": true,
+      "visible": false
+    },
     "slug": {
       "type": "uid",
       "targetField": "title",
@@ -19,117 +25,104 @@
     },
     "title": {
       "type": "string",
-      "required": true,
       "maxLength": 200,
-      "description": "Page title for SEO"
+      "required": true
     },
     "metaDescription": {
       "type": "text",
-      "required": false,
       "maxLength": 160,
-      "description": "Meta description for SEO"
+      "required": false
     },
     "metaKeywords": {
       "type": "text",
-      "required": false,
       "maxLength": 200,
-      "description": "Comma-separated keywords for SEO"
+      "required": false
     },
     "ogImage": {
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": ["images"],
-      "description": "Open Graph image for social sharing"
+      "allowedTypes": [
+        "images"
+      ]
     },
     "hero": {
       "type": "component",
-      "repeatable": false,
       "component": "landing-page.hero",
+      "repeatable": false,
       "required": true
     },
     "webinarCta": {
       "type": "component",
-      "repeatable": false,
       "component": "landing-page.webinar-cta",
-      "required": false,
-      "description": "Primary CTA section with webinar registration"
+      "repeatable": false,
+      "required": false
     },
     "features": {
       "type": "component",
-      "repeatable": true,
       "component": "landing-page.feature",
-      "max": 12,
-      "description": "Key features or benefits"
+      "repeatable": true,
+      "max": 12
     },
     "featuresTitle": {
       "type": "string",
-      "required": false,
+      "default": "Key Features",
       "maxLength": 200,
-      "default": "Key Features"
+      "required": false
     },
     "featuresSubtitle": {
       "type": "text",
-      "required": false,
-      "maxLength": 500
+      "maxLength": 500,
+      "required": false
     },
     "testimonials": {
       "type": "component",
-      "repeatable": true,
       "component": "landing-page.testimonial",
-      "max": 10,
-      "description": "Customer testimonials"
+      "repeatable": true,
+      "max": 10
     },
     "testimonialsTitle": {
       "type": "string",
-      "required": false,
+      "default": "What Our Customers Say",
       "maxLength": 200,
-      "default": "What Our Customers Say"
+      "required": false
     },
     "secondaryCta": {
       "type": "component",
-      "repeatable": false,
       "component": "landing-page.webinar-cta",
-      "required": false,
-      "description": "Secondary CTA section (bottom of page)"
+      "repeatable": false,
+      "required": false
     },
     "footerText": {
       "type": "richtext",
-      "required": false,
-      "description": "Footer content for the landing page"
+      "required": false
     },
     "customCss": {
       "type": "text",
-      "required": false,
-      "description": "Custom CSS for this specific landing page"
+      "required": false
     },
     "customJs": {
       "type": "text",
-      "required": false,
-      "description": "Custom JavaScript for tracking or functionality"
+      "required": false
     },
     "trackingPixels": {
       "type": "json",
-      "required": false,
-      "description": "Tracking pixels configuration (Google, Facebook, etc.)"
+      "required": false
     },
     "conversionGoal": {
       "type": "string",
-      "required": false,
       "maxLength": 100,
-      "description": "Conversion goal identifier for analytics"
+      "required": false
     },
     "abTestVariant": {
       "type": "enumeration",
-      "enum": ["control", "variant-a", "variant-b", "variant-c"],
       "default": "control",
-      "description": "A/B test variant identifier"
-    },
-    "publishedAt": {
-      "type": "datetime",
-      "configurable": false,
-      "writable": true,
-      "visible": false
+      "enum": [
+        "control",
+        "variant-a",
+        "variant-b",
+        "variant-c"
+      ]
     }
   }
 }

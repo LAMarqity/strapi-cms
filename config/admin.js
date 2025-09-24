@@ -18,6 +18,8 @@ module.exports = ({ env }) => ({
         const getPreviewPathname = (uid, documentId) => {
           switch (uid) {
             case 'api::landing-page.landing-page':
+              // Check if this is a webinar-type landing page by looking at the content
+              // For now, we'll route all landing pages to the same preview
               return `/preview/landing-page/${documentId}`;
             case 'api::post.post':
               return `/preview/post/${documentId}`;
