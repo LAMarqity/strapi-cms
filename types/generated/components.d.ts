@@ -619,6 +619,7 @@ export interface LandingPageWebinarCta extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'https://app.loops.so/api/v1/contacts/create'>;
     loopsListId: Schema.Attribute.String;
     privacyPolicyLink: Schema.Attribute.String;
+    registrationFormIframe: Schema.Attribute.Text & Schema.Attribute.Required;
     speakerImage: Schema.Attribute.Media<'images'>;
     speakerName: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
