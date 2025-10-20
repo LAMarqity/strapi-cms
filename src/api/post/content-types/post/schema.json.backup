@@ -1,0 +1,324 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "AI/GEO Optimized Post",
+    "description": "Comprehensive AI and GEO optimized content type for maximum LLM visibility"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "required": true,
+      "maxLength": 300
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "content_blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "content-blocks.text-block",
+        "content-blocks.table-block",
+        "content-blocks.image-block",
+        "content-blocks.code-block",
+        "content-blocks.quote-block",
+        "content-blocks.video-block",
+        "content-blocks.cta-block"
+      ]
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "ai_summary": {
+      "type": "text",
+      "required": true,
+      "maxLength": 500
+    },
+    "key_takeaways": {
+      "type": "component",
+      "repeatable": true,
+      "component": "geo-optimization.key-takeaway"
+    },
+    "content_outline": {
+      "type": "richtext"
+    },
+    "semantic_keywords": {
+      "type": "string"
+    },
+    "entity_mentions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "geo-optimization.entity-mention"
+    },
+    "content_type_classification": {
+      "type": "enumeration",
+      "enum": ["tutorial", "guide", "analysis", "news", "review", "comparison", "howto"],
+      "default": "guide"
+    },
+    "expertise_level": {
+      "type": "enumeration",
+      "enum": ["beginner", "intermediate", "advanced", "expert"],
+      "default": "intermediate"
+    },
+    "primary_schema_type": {
+      "type": "enumeration",
+      "enum": ["article", "blogposting", "howto", "faq", "product", "review", "recipe", "newsarticle"],
+      "default": "article"
+    },
+    "faq_section": {
+      "type": "component",
+      "repeatable": true,
+      "component": "structured-data.faq-section"
+    },
+    "how_to_steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "structured-data.how-to-step"
+    },
+    "data_tables": {
+      "type": "component",
+      "repeatable": true,
+      "component": "structured-data.data-table"
+    },
+    "sources_and_citations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "authority.source-citation"
+    },
+    "fact_checks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "authority.fact-check"
+    },
+    "statistics_and_data": {
+      "type": "component",
+      "repeatable": true,
+      "component": "authority.statistic"
+    },
+    "author_expertise": {
+      "type": "component",
+      "component": "authority.author-expertise"
+    },
+    "content_authority_score": {
+      "type": "integer",
+      "min": 1,
+      "max": 100,
+      "default": 50
+    },
+    "peer_reviewed": {
+      "type": "boolean",
+      "default": false
+    },
+    "expert_quotes": {
+      "type": "component",
+      "repeatable": true,
+      "component": "authority.expert-quote"
+    },
+    "internal_links": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-features.internal-link"
+    },
+    "related_entities": {
+      "type": "string"
+    },
+    "ai_training_context": {
+      "type": "text"
+    },
+    "conversational_queries": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ai-optimization.conversational-query"
+    },
+    "voice_search_optimized": {
+      "type": "boolean",
+      "default": false
+    },
+    "featured_snippet_target": {
+      "type": "string"
+    },
+    "ai_model_mentions": {
+      "type": "json"
+    },
+    "perplexity_optimized": {
+      "type": "boolean",
+      "default": false
+    },
+    "chatgpt_friendly": {
+      "type": "boolean",
+      "default": false
+    },
+    "json_ld_schema": {
+      "type": "json"
+    },
+    "breadcrumb_structure": {
+      "type": "json"
+    },
+    "speakable_content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ai-optimization.speakable-content"
+    },
+    "same_as_profiles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ai-optimization.same-as-profile"
+    },
+    "meta_title": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "meta_description": {
+      "type": "text",
+      "maxLength": 160
+    },
+    "canonical_url": {
+      "type": "string"
+    },
+    "og_title": {
+      "type": "string"
+    },
+    "og_description": {
+      "type": "text"
+    },
+    "og_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "twitter_card_type": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["draft", "published", "archived"],
+      "default": "draft",
+      "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "publish_date": {
+      "type": "datetime"
+    },
+    "unpublish_date": {
+      "type": "datetime"
+    },
+    "content_freshness_indicators": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-features.freshness-indicator"
+    },
+    "ai_visibility_metrics": {
+      "type": "json"
+    },
+    "geo_performance_score": {
+      "type": "integer",
+      "min": 1,
+      "max": 100,
+      "default": 50
+    },
+    "competitor_analysis": {
+      "type": "json"
+    },
+    "read_time": {
+      "type": "integer",
+      "min": 1
+    },
+    "word_count": {
+      "type": "integer",
+      "min": 1
+    },
+    "view_count": {
+      "type": "integer",
+      "min": 0,
+      "default": 0
+    },
+    "sort_order": {
+      "type": "integer"
+    },
+    "interactive_elements": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-features.interactive-element"
+    },
+    "call_to_actions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-features.call-to-action"
+    },
+    "allow_comments": {
+      "type": "boolean",
+      "default": true
+    },
+    "newsletter_sent": {
+      "type": "boolean",
+      "default": false
+    },
+    "content_formats": {
+      "type": "component",
+      "repeatable": true,
+      "component": "content-features.content-format"
+    },
+    "custom_css": {
+      "type": "text"
+    },
+    "external_url": {
+      "type": "string"
+    },
+    "table_of_contents": {
+      "type": "boolean",
+      "default": false
+    },
+    "llm_optimization_notes": {
+      "type": "text"
+    },
+    "content_evolution_log": {
+      "type": "json"
+    },
+    "ai_model_compatibility": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ai-optimization.model-compatibility"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "posts"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "posts"
+    },
+    "related_posts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::post.post"
+    }
+  }
+}
