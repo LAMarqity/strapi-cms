@@ -12,7 +12,8 @@ module.exports = ({ env }) => ({
   i18n: {
     enabled: true,
     config: {
-      locales: ['en', 'sv'], // English and Swedish
+      defaultLocale: 'sv',
+      locales: ['sv', 'en'], // Swedish and English (Swedish is default)
     },
   },
 });

@@ -1324,6 +1324,22 @@ export interface ApiSolutionSolution extends Struct.CollectionTypeSchema {
         maxLength: 300;
       }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
+    solution_function: Schema.Attribute.Enumeration<
+      ['customer_service', 'sales', 'booking']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    solution_industry: Schema.Attribute.Enumeration<
+      ['ecommerce', 'industry', 'services']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

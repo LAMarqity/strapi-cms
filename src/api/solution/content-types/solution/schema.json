@@ -18,13 +18,13 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "maxLength": 200,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 200,
+      "required": true
     },
     "slug": {
       "type": "uid",
@@ -33,163 +33,195 @@
     },
     "shortDescription": {
       "type": "text",
-      "maxLength": 300,
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 300,
+      "required": true
     },
     "heroImage": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "icon": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "overview": {
       "type": "richtext",
-      "required": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "features": {
       "type": "component",
-      "repeatable": true,
-      "required": false,
-      "component": "landing-page.feature",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "landing-page.feature",
+      "repeatable": true,
+      "required": false
     },
     "benefits": {
       "type": "richtext",
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "howItWorks": {
       "type": "richtext",
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "pricing": {
       "type": "richtext",
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": false
     },
     "ctaText": {
       "type": "string",
-      "maxLength": 100,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 100,
+      "required": false
     },
     "ctaUrl": {
       "type": "string",
-      "maxLength": 500,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "maxLength": 500,
+      "required": false
     },
     "metaTitle": {
       "type": "string",
-      "maxLength": 70,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 70,
+      "required": false
     },
     "metaDescription": {
       "type": "text",
-      "maxLength": 160,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 160,
+      "required": false
     },
     "metaKeywords": {
       "type": "text",
-      "maxLength": 200,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "maxLength": 200,
+      "required": false
     },
     "ogImage": {
       "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images"],
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "featured": {
       "type": "boolean",
-      "default": false,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": false,
+      "default": false
     },
     "order": {
       "type": "integer",
-      "default": 0,
-      "required": false,
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "required": false,
+      "default": 0
+    },
+    "solution_function": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "customer_service",
+        "sales",
+        "booking"
+      ]
+    },
+    "solution_industry": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "enum": [
+        "ecommerce",
+        "industry",
+        "services"
+      ]
     }
   }
 }
