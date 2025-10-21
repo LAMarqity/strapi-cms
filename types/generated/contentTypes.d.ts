@@ -424,7 +424,7 @@ export interface ApiLandingPageLandingPage extends Struct.CollectionTypeSchema {
   collectionName: 'landing_pages';
   info: {
     description: 'Landing pages for webinars and marketing campaigns';
-    displayName: 'Webinar';
+    displayName: 'Landing page';
     pluralName: 'landing-pages';
     singularName: 'landing-page';
   };
