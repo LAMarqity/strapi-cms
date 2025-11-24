@@ -659,6 +659,12 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
+    featuredVideo: Schema.Attribute.Media<'files' | 'videos'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     instructors: Schema.Attribute.Component<'category.instructor', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -724,6 +730,12 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<0>;
+    prerequisites: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     price: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -773,6 +785,12 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    whatYouGet: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
