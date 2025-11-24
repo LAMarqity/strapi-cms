@@ -69,39 +69,6 @@
       "maxLength": 50,
       "required": false
     },
-    "instructor": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "maxLength": 100,
-      "required": false
-    },
-    "instructorBio": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "maxLength": 500,
-      "required": false
-    },
-    "instructorImage": {
-      "type": "media",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "featuredImage": {
       "type": "media",
       "pluginOptions": {
@@ -203,6 +170,18 @@
       },
       "maxLength": 160,
       "required": false
+    },
+    "instructors": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "category.instructor",
+      "repeatable": true,
+      "required": true,
+      "min": 1
     }
   }
 }

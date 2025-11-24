@@ -659,30 +659,19 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    instructor: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
-    instructorBio: Schema.Attribute.Text &
+    instructors: Schema.Attribute.Component<'category.instructor', true> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 500;
-      }>;
-    instructorImage: Schema.Attribute.Media<'images'> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     isOnline: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {

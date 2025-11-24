@@ -176,6 +176,21 @@ export interface CategoryCategory extends Struct.ComponentSchema {
   };
 }
 
+export interface CategoryInstructor extends Struct.ComponentSchema {
+  collectionName: 'components_category_instructors';
+  info: {
+    displayName: 'Instructor';
+    icon: 'paint';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    full_name: Schema.Attribute.String;
+    profile_pic: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+  };
+}
+
 export interface CategoryTags extends Struct.ComponentSchema {
   collectionName: 'components_category_tags';
   info: {
@@ -715,6 +730,7 @@ declare module '@strapi/strapi' {
       'authority.statistic': AuthorityStatistic;
       'category.author': CategoryAuthor;
       'category.category': CategoryCategory;
+      'category.instructor': CategoryInstructor;
       'category.tags': CategoryTags;
       'content-blocks.code-block': ContentBlocksCodeBlock;
       'content-blocks.cta-block': ContentBlocksCtaBlock;

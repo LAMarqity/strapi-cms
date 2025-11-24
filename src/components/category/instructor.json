@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_category_instructors",
+  "info": {
+    "displayName": "Instructor",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "profile_pic": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}
