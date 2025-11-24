@@ -58,7 +58,7 @@
         }
       }
     },
-    "courseDate": {
+    "courseDateStart": {
       "type": "datetime",
       "pluginOptions": {
         "i18n": {
@@ -67,15 +67,14 @@
       },
       "required": true
     },
-    "duration": {
-      "type": "string",
+    "courseDateEnd": {
+      "type": "datetime",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "maxLength": 50,
-      "required": false
+      "required": true
     },
     "featuredImage": {
       "type": "media",
@@ -89,16 +88,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "price": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "maxLength": 50,
-      "required": false
     },
     "registrationUrl": {
       "type": "string",
@@ -128,6 +117,24 @@
       },
       "maxLength": 200,
       "required": false
+    },
+    "price": {
+      "type": "biginteger",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true,
+      "max": "100000"
+    },
+    "currency": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "isOnline": {
       "type": "boolean",

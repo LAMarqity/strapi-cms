@@ -621,7 +621,14 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    courseDate: Schema.Attribute.DateTime &
+    courseDateEnd: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    courseDateStart: Schema.Attribute.DateTime &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -631,20 +638,17 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText &
+    currency: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    duration: Schema.Attribute.String &
+    description: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 50;
       }>;
     featured: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
@@ -736,15 +740,19 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    price: Schema.Attribute.String &
+    price: Schema.Attribute.BigInteger &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
+      Schema.Attribute.SetMinMax<
+        {
+          max: '100000';
+        },
+        string
+      >;
     programDescription: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
