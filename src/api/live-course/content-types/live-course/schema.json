@@ -50,6 +50,14 @@
       },
       "required": false
     },
+    "programDescription": {
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "courseDate": {
       "type": "datetime",
       "pluginOptions": {
