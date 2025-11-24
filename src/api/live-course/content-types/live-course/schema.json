@@ -58,6 +58,22 @@
         }
       }
     },
+    "whatYouGet": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "prerequisites": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "courseDateStart": {
       "type": "datetime",
       "pluginOptions": {
@@ -197,22 +213,6 @@
       "repeatable": true,
       "required": true,
       "min": 1
-    },
-    "whatYouGet": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "prerequisites": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     },
     "featuredVideo": {
       "type": "media",

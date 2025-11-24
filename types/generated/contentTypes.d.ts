@@ -734,7 +734,7 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
         };
       }> &
       Schema.Attribute.DefaultTo<0>;
-    prerequisites: Schema.Attribute.Text &
+    prerequisites: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -793,7 +793,7 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    whatYouGet: Schema.Attribute.Text &
+    whatYouGet: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
