@@ -8,7 +8,7 @@ const { createCoreController } = require('@strapi/strapi').factories;
 
 module.exports = createCoreController('api::live-course.live-course', ({ strapi }) => ({
   async find(ctx) {
-    // Add default populate for nested instructor profile_pic
+    // Add default populate for relations and media
     ctx.query = {
       ...ctx.query,
       populate: {
@@ -27,7 +27,7 @@ module.exports = createCoreController('api::live-course.live-course', ({ strapi 
   },
 
   async findOne(ctx) {
-    // Add default populate for nested instructor profile_pic
+    // Add default populate for relations and media
     ctx.query = {
       ...ctx.query,
       populate: {

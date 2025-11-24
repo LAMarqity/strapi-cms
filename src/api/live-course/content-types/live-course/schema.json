@@ -203,16 +203,10 @@
       "required": false
     },
     "instructors": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "category.instructor",
-      "repeatable": true,
-      "required": true,
-      "min": 1
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::instructor.instructor",
+      "inversedBy": "live_courses"
     },
     "featuredVideo": {
       "type": "media",
