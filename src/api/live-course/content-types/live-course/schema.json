@@ -51,7 +51,7 @@
       "required": false
     },
     "programDescription": {
-      "type": "text",
+      "type": "richtext",
       "pluginOptions": {
         "i18n": {
           "localized": true

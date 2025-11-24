@@ -733,6 +733,12 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 50;
       }>;
+    programDescription: Schema.Attribute.RichText &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     registrationUrl: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
