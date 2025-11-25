@@ -752,6 +752,13 @@ export interface ApiLiveCourseEventLiveCourseEvent
           localized: false;
         };
       }>;
+    is_online: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     live_course: Schema.Attribute.Relation<
       'manyToOne',
       'api::live-course.live-course'

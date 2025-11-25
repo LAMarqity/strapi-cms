@@ -55,6 +55,16 @@
       },
       "required": true
     },
+    "is_online": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": false,
+      "required": false
+    },
     "location": {
       "type": "string",
       "pluginOptions": {
