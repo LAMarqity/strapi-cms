@@ -83,34 +83,6 @@
       },
       "required": false
     },
-    "early_bird_price": {
-      "type": "biginteger",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false
-    },
-    "regular_price": {
-      "type": "biginteger",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false
-    },
-    "stripe_price_id": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "maxLength": 100,
-      "required": false
-    },
     "status": {
       "type": "enumeration",
       "enum": ["draft", "published", "sold-out", "cancelled"],

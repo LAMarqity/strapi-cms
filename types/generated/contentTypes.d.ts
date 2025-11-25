@@ -738,12 +738,6 @@ export interface ApiLiveCourseEventLiveCourseEvent
           localized: false;
         };
       }>;
-    early_bird_price: Schema.Attribute.BigInteger &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     event_end: Schema.Attribute.DateTime &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -783,12 +777,6 @@ export interface ApiLiveCourseEventLiveCourseEvent
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    regular_price: Schema.Attribute.BigInteger &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     status: Schema.Attribute.Enumeration<
       ['draft', 'published', 'sold-out', 'cancelled']
@@ -800,15 +788,6 @@ export interface ApiLiveCourseEventLiveCourseEvent
         };
       }> &
       Schema.Attribute.DefaultTo<'draft'>;
-    stripe_price_id: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 100;
-      }>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
