@@ -1,0 +1,126 @@
+{
+  "kind": "collectionType",
+  "collectionName": "live_course_events",
+  "info": {
+    "singularName": "live-course-event",
+    "pluralName": "live-course-events",
+    "displayName": "Live Course Event",
+    "description": "Specific scheduled instances of live courses"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "maxLength": 200,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "live_course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::live-course.live-course",
+      "inversedBy": "events"
+    },
+    "event_start": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "event_end": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": true
+    },
+    "location": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "maxLength": 200,
+      "required": false
+    },
+    "max_participants": {
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "early_bird_deadline": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "early_bird_price": {
+      "type": "biginteger",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "regular_price": {
+      "type": "biginteger",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
+    "stripe_price_id": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "maxLength": 100,
+      "required": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["draft", "published", "sold-out", "cancelled"],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": "draft",
+      "required": true
+    }
+  }
+}

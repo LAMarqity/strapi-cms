@@ -220,6 +220,22 @@
         "files",
         "videos"
       ]
+    },
+    "stripe_product_id": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "maxLength": 100,
+      "required": false
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::live-course-event.live-course-event",
+      "mappedBy": "live_course"
     }
   }
 }
