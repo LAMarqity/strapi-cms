@@ -489,6 +489,12 @@ export interface ApiCourseEventCourseEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    registration_deadline: Schema.Attribute.DateTime &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     status: Schema.Attribute.Enumeration<
       ['draft', 'published', 'sold-out', 'cancelled']
@@ -570,13 +576,6 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'api::instructor.instructor'
     > &
       Schema.Attribute.Required;
-    isOnline: Schema.Attribute.Boolean &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.DefaultTo<true>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     metaDescription: Schema.Attribute.Text &

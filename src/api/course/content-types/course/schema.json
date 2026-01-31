@@ -87,16 +87,6 @@
         "images"
       ]
     },
-    "isOnline": {
-      "type": "boolean",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false,
-      "default": true
-    },
     "featured": {
       "type": "boolean",
       "pluginOptions": {

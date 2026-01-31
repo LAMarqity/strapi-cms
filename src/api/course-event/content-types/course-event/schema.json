@@ -84,6 +84,15 @@
       },
       "required": false
     },
+    "registration_deadline": {
+      "type": "datetime",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "required": false
+    },
     "early_bird_deadline": {
       "type": "datetime",
       "pluginOptions": {
