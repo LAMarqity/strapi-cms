@@ -1,12 +1,12 @@
 'use strict';
 
 /**
- * live-course controller
+ * course controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::live-course.live-course', ({ strapi }) => ({
+module.exports = createCoreController('api::course.course', ({ strapi }) => ({
   async find(ctx) {
     // Add default populate for relations and media
     ctx.query = {

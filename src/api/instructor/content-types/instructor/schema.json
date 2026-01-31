@@ -110,10 +110,10 @@
       "maxLength": 500,
       "required": false
     },
-    "live_courses": {
+    "courses": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::live-course.live-course",
+      "target": "api::course.course",
       "mappedBy": "instructors"
     }
   }

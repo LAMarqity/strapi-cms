@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "live_course_events",
+  "collectionName": "course_events",
   "info": {
-    "singularName": "live-course-event",
-    "pluralName": "live-course-events",
-    "displayName": "Live Course Event",
-    "description": "Specific scheduled instances of live courses"
+    "singularName": "course-event",
+    "pluralName": "course-events",
+    "displayName": "Course Event",
+    "description": "Specific scheduled instances of courses"
   },
   "options": {
     "draftAndPublish": true
@@ -31,10 +31,10 @@
       "targetField": "title",
       "required": true
     },
-    "live_course": {
+    "course": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::live-course.live-course",
+      "target": "api::course.course",
       "inversedBy": "events"
     },
     "event_start": {

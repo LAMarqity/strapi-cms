@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * live-course service
+ * course service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::live-course.live-course');
+module.exports = createCoreService('api::course.course');

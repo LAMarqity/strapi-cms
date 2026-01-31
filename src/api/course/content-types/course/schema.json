@@ -1,11 +1,11 @@
 {
   "kind": "collectionType",
-  "collectionName": "live_courses",
+  "collectionName": "courses",
   "info": {
-    "singularName": "live-course",
-    "pluralName": "live-courses",
-    "displayName": "Live Course",
-    "description": "Live courses and training sessions"
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": "Courses and training sessions"
   },
   "options": {
     "draftAndPublish": true
@@ -141,7 +141,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::instructor.instructor",
-      "inversedBy": "live_courses",
+      "inversedBy": "courses",
       "required": true
     },
     "featuredVideo": {
@@ -180,8 +180,8 @@
     "events": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::live-course-event.live-course-event",
-      "mappedBy": "live_course"
+      "target": "api::course-event.course-event",
+      "mappedBy": "course"
     }
   }
 }
