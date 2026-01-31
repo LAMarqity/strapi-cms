@@ -74,24 +74,6 @@
         }
       }
     },
-    "courseDateStart": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": true
-    },
-    "courseDateEnd": {
-      "type": "datetime",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true
-    },
     "featuredImage": {
       "type": "media",
       "pluginOptions": {
@@ -104,53 +86,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "registrationUrl": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "maxLength": 500,
-      "required": false
-    },
-    "maxParticipants": {
-      "type": "integer",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "required": false
-    },
-    "location": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "maxLength": 200,
-      "required": false
-    },
-    "price": {
-      "type": "biginteger",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "required": true,
-      "max": "100000"
-    },
-    "currency": {
-      "type": "string",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     },
     "isOnline": {
       "type": "boolean",
@@ -206,7 +141,8 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::instructor.instructor",
-      "inversedBy": "live_courses"
+      "inversedBy": "live_courses",
+      "required": true
     },
     "featuredVideo": {
       "type": "media",
@@ -222,6 +158,16 @@
       ]
     },
     "stripe_product_id": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "maxLength": 100,
+      "required": false
+    },
+    "stripe_product_id_test": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

@@ -828,29 +828,9 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    courseDateEnd: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    courseDateStart: Schema.Attribute.DateTime &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    currency: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     description: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -883,7 +863,8 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
     instructors: Schema.Attribute.Relation<
       'manyToMany',
       'api::instructor.instructor'
-    >;
+    > &
+      Schema.Attribute.Required;
     isOnline: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -896,21 +877,6 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::live-course.live-course'
     >;
-    location: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    maxParticipants: Schema.Attribute.Integer &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
     metaDescription: Schema.Attribute.Text &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -942,19 +908,6 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    price: Schema.Attribute.BigInteger &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Schema.Attribute.SetMinMax<
-        {
-          max: '100000';
-        },
-        string
-      >;
     programDescription: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -962,15 +915,6 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    registrationUrl: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }> &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 500;
-      }>;
     shortDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -983,6 +927,15 @@ export interface ApiLiveCourseLiveCourse extends Struct.CollectionTypeSchema {
       }>;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     stripe_product_id: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    stripe_product_id_test: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
